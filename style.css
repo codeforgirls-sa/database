@@ -3,8 +3,8 @@
 }
 
 body{
-  background:#703d80;
-  color:#53116d;
+  background:#c292d1;
+  color:#dfa2f7;
   line-height:1.6;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding:1em;
@@ -31,7 +31,7 @@ ul{
 }
 
 .wrapper{
-  box-shadow: 0 0 20px 0 rgba(116, 72, 114, 0.7);
+  box-shadow: 0 0 20px 0 rgba(248, 163, 244, 0.7);
 }
 
 .wrapper > *{

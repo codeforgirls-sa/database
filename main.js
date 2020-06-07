@@ -28,12 +28,11 @@ function submitForm(e){
   var company = getInputVal('company');
   var email = getInputVal('email');
   var phone = getInputVal('phone');
-  var message = getInputVal('message');
-
-  console.log(name);
+ 
+  console.log(name, company, email, phone);
 
   // Save message
-  saveMessage(name, company, email, phone, message);
+  saveMessage(name, company, email, phone);
 
   // Show alert
   document.querySelector('.alert').style.display = 'block';
@@ -53,14 +52,14 @@ function getInputVal(id){
 }
 
 // "Insert Query" Save message to firebase
-function saveMessage(name, company, email, phone, message){
+function saveMessage(name, company, email, phone){
   var newMessageRef = messagesRef.push();
   newMessageRef.set({
     name: name,
     company:company,
     email:email,
-    phone:phone,
-    message:message
+    phone:phone
   });
 }
 
+//**TODO**: Print user infromation

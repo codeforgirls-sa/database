@@ -6,17 +6,19 @@
 <body>
 <div class="container">
 <?php 
+
+//DB infromation
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "CodeForGirls";
-
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
+
 // sql to create table
 $sql = "CREATE TABLE IF NOT EXISTS User  (
   `user_id` INT NOT NULL AUTO_INCREMENT,
@@ -26,14 +28,13 @@ $sql = "CREATE TABLE IF NOT EXISTS User  (
   `field` VARCHAR(45) NOT NULL,
   `manger_id` INT NOT NULL,
   PRIMARY KEY (`user_id`))";
-
 if ($conn->query($sql) === TRUE) {
     print "Table User created successfully </p>\n";
 } else {
     print "Error creating table: " . $conn->error;
 }
 
-  //Insert employee infromation to the database. 
+//Insert employee infromation to the database. 
         // $sql = "INSERT INTO User (name, email, phone_number, field, manger_id) VALUES ('Suad', 'Suad@gmail.com', 056668746,'Sup Manger ' , 5 );";
         // $sql .= "INSERT INTO User (name, email, phone_number, field, manger_id) VALUES ('Salma', 'Salma@gmail.com', 056668746,'Test team ' , 3 );";
         // $sql .= "INSERT INTO User (name, email, phone_number, field, manger_id) VALUES ('Zahra', 'zahra@gmail.com', 056668746,'design team ' , 2 );";
@@ -54,7 +55,8 @@ if ($conn->query($sql) === TRUE) {
                     }
             
     
-//print data
+//print all data 
+ //**TODO**: print user infromation where their Manger id is 5. 
         $query = 'SELECT * FROM User ';  
         if ($r = mysqli_query($conn, $query )) { 
           ?>
@@ -91,12 +93,6 @@ if ($conn->query($sql) === TRUE) {
         } else { 
           print "<p Error Cannot peint records : " . $conn->error. "</p>";
         } 
- //**TODO**: print user infromation where their Manger id is 5. 
-
-
-
-
-
 $conn->close();
 ?>
   </div>
